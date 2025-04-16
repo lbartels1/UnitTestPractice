@@ -20,3 +20,27 @@ TEST(PasswordTest, single_letter_password)
 	int actual = my_password.count_leading_characters("Z");
 	ASSERT_EQ(1, actual);
 }
+
+TEST(PasswordTest, repeated_letter_password)
+{
+	Password my_password;
+	ASSERT_EQ(5, my_password.count_leading_characters("ZZZZZ"));
+}
+
+TEST(PasswordTest, two_leading_a)
+{
+	Password my_password;
+	ASSERT_EQ(2, my_password.count_leading_characters("aab"));
+}
+
+TEST(PasswordTest, capital_letter_start)
+{
+	Password my_password;
+	ASSERT_EQ(1, my_password.count_leading_characters("Aab"));
+}
+
+TEST(PasswordTest, lower_letter_start)
+{
+	Password my_password;
+	ASSERT_EQ(1, my_password.count_leading_characters("Aab"));
+}
